@@ -43,6 +43,7 @@
     width: 40%;
    border: 1px solid black;
     border-radius: 10px;
+    background-color: white;
 }
 
 .productGoToCartLink{
@@ -55,4 +56,14 @@
     width: 100%;
     border: 1px solid black;
     border-radius: 10px;
+    background-color: white
+}
+
+.productCartBtn:hover{
+    color: white;
+    background-color: black;
+}
+.productGoToCartBtn:hover{
+    color: white;
+    background-color: black;
 }

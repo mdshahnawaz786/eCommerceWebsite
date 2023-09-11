@@ -17,27 +17,18 @@ const AppFooter = () => {
           floating
           className='m-1'
           style={{ backgroundColor: '#3b5998' }}
-          href='#!'
+          href="https://www.facebook.com/md.shahnawaz.940"
           role='button'
         >
           <MDBIcon fab icon='facebook-f' />
         </MDBBtn>
 
-        <MDBBtn
-          floating
-          className='m-1'
-          style={{ backgroundColor: '#55acee' }}
-          href='#!'
-          role='button'
-        >
-          <MDBIcon fab icon='twitter' />
-        </MDBBtn>
 
         <MDBBtn
           floating
           className='m-1'
           style={{ backgroundColor: '#dd4b39' }}
-          href='#!'
+          href="https://mail.google.com/mail/u/0/#inbox"
           role='button'
         >
           <MDBIcon fab icon='google' />
@@ -46,7 +37,7 @@ const AppFooter = () => {
           floating
           className='m-1'
           style={{ backgroundColor: '#ac2bac' }}
-          href='#!'
+          href="https://instagram.com/md_shahnawaz786"
           role='button'
         >
           <MDBIcon fab icon='instagram' />
@@ -56,7 +47,7 @@ const AppFooter = () => {
           floating
           className='m-1'
           style={{ backgroundColor: '#0082ca' }}
-          href='#!'
+          href="https://linkedin.com/in/shahnawaz0786"
           role='button'
         >
           <MDBIcon fab icon='linkedin-in' />
@@ -66,7 +57,7 @@ const AppFooter = () => {
           floating
           className='m-1'
           style={{ backgroundColor: '#333333' }}
-          href='#!'
+          href="https://github.com/mdshahnawaz786"
           role='button'
         >
           <MDBIcon fab icon='github' />
@@ -75,10 +66,11 @@ const AppFooter = () => {
     </MDBContainer>
 
     <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-      © 2020 Copyright:
-      <a className='text-white' href='https://mdbootstrap.com/'>
-        MDBootstrap.com
+    © E-Commerce website 2023 | Copyright:
+      <a className='text-white' href='https://fakestoreapi.com/'>
+      {" "}fakestoreapi.com
       </a>
+      &nbsp;&nbsp;| Developed by Md Shahnawaz...
     </div>
   </MDBFooter></div>
   )

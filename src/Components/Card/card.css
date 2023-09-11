@@ -3,7 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .card{
@@ -40,6 +40,7 @@
     width: 95%;
    border: 1px solid black;
     border-radius: 10px;
+    background-color: white
 }
 .moreDetailLink{
     height: 40%;
@@ -50,4 +51,13 @@
    width: 100%;
    border: 1px solid black;
     border-radius: 10px;
+    background-color: white
+}
+.addToCart:hover{
+  color: white;
+  background: #000;
+}
+.moreDetail:hover{
+  color: white;
+  background: #000;
 }

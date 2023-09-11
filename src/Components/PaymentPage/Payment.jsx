@@ -26,6 +26,9 @@ const Payment = () => {
   return (
     <div className='paymentPage'>
        <div className="leftpaymentPage">
+        <hr />
+        <h3>Billing Address</h3>
+        <hr />
        <Form>
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridEmail">
@@ -69,6 +72,8 @@ const Payment = () => {
         </Form.Group>
       </Row>
 
+      <hr />
+
       <Form.Group className="mb-3" id="formGridCheckbox">
         <Form.Check type="checkbox" label="Shipping address is the same as my billing address" />
         <Form.Check type="checkbox" label="Save this information htmlFor next time" />
@@ -76,7 +81,7 @@ const Payment = () => {
 
       
     </Form>
-    {/* ----------------------------- */}
+    <hr />
     <div>
     <Form>
       {['radio'].map((type) => (
@@ -103,53 +108,63 @@ const Payment = () => {
         </div>
       ))}
     </Form>
+    <hr />
     </div>
 
     <div>
     <Form>
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Label>Card Number</Form.Label>
+          <Form.Control type="email" placeholder="Enter card no" />
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+          <Form.Label>Name on Card</Form.Label>
+          <Form.Control type="password" placeholder="Enter Name on card" />
         </Form.Group>
       </Row>
 
       
 
       <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>City</Form.Label>
-          <Form.Control />
+        <Form.Group as={Col} controlId="formGridCity" >
+          <Form.Label >Expiry</Form.Label>
+          <Form.Control placeholder="MM/YY"/>
         </Form.Group>
 
         
 
         <Form.Group as={Col} controlId="formGridZip">
-          <Form.Label>Zip</Form.Label>
-          <Form.Control />
+          <Form.Label>CVV</Form.Label>
+          <Form.Control placeholder="987"/>
         </Form.Group>
       </Row>
 
       
 
-      <Button variant="primary" type="submit">
-        Submit
+      <div className="d-grid gap-2">
+      <Button className='pay' variant="primary" size="lg">
+        Click to Pay
       </Button>
+      
+    </div>
     </Form>
     </div>
        </div>
        <div className="rightPaymentPage">
-        <h1>Your Cart {addToCart.length}</h1>
+        <hr />
+        <div className="cartpageTop">
+        <h3>Your Cart</h3>
+        <div className='length'><h3>{addToCart.length}</h3></div>
+        </div>
+        <hr />
 
 
        <ListGroup as="ol" numbered>
       {addToCart.map((ele,idx)=>{
-        ref.current += parseInt(ele.price)
+        let sum = parseInt(ele.price * cartPaymentCount[ele.id - 1])
+        ref.current = ref.current+sum
         return(
           <>
             <ListGroup.Item
@@ -158,17 +173,33 @@ const Payment = () => {
       >
         <div className="ms-2 me-auto">
           <div className="fw-bold">{ele.title}</div>
-         {cartPaymentCount[ele.id -1]}
+         Quantity: {cartPaymentCount[ele.id -1]}
         </div>
         <Badge bg="primary" pill>
-         {ele.price}
+        ₹ {ele.price * cartPaymentCount[ele.id -1]}
         </Badge>
       </ListGroup.Item>
           </>
         )
       })}
+      <ListGroup.Item
+                    as="li"
+                    className="d-flex justify-content-between align-items-start"
+                  >
+                    <div className="ms-2 me-auto">
+                      <div className="fw-bold">Total</div>
+                      
+                    </div>
+                    <Badge bg="primary" pill>
+                    ₹ {ref.current.toFixed(2)} 
+                    </Badge>
+                  </ListGroup.Item>
     </ListGroup>
-    <h1>Total: {ref.current}</h1>
+    
+    
+
+
+          
        </div>
     </div>
   )

@@ -1,3 +1,15 @@
+
+
+.cartContainerBox{
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .cartContainer{
     
     display: flex;
@@ -5,19 +17,23 @@
     margin-top: 20px;
     position: relative;
     width: 90%;
+    /* border: 1px solid black; */
+    background-color: rgba(242, 247, 244, 0.678);
    
 }
 .cartImg{
-    align-items: center;
+    
     display: flex;
     height: 100%;
+    align-items: center;
     justify-content: center;
     width: 50%;
+    /* border: 1px solid black; */
 }
 
 .cartImg img{
     height: 70%;
-    width: 70%;
+    width: 60%;
 }
 
 .cartDetail{
@@ -29,15 +45,70 @@
     justify-content: center;
     padding: 0 1rem;
     width: 50%;
+    /* border: 2px solid black; */
 }
 
 .addMinusButton{
+    height: 15%;
+    width: 20%;
+    /* border: 1px solid black; */
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
 }
+
+.plusBtn{
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+.minusBtn{
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.plusBtn:hover{
+    background-color: black;
+    color: white;
+}
+.minusBtn:hover{
+    background-color: black;
+    color: white;
+}
+
 
 .deleteButton {
     position: absolute;
     top: 1%;
     right: 1%;
+    cursor: pointer;
   }
+
+  .button_container{
+    height: 10vh;
+    width: 15%;
+    /* border: 1px solid black; */
+    margin-top: 20px;
+  }
+  
+
+.btn-outline-secondary{
+    width: 100%;
+    height: 100%;
+    background-color:  rgba(242, 247, 244, 0.678);
+    color: #000;
+}
+.btn-outline-secondary:hover{
+    background: #000;
+}
+

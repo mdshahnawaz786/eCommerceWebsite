@@ -4,9 +4,41 @@
 }
 
 .leftpaymentPage{
-    width: 50%;
+    width: 60%;
+    /* border: 1px solid black; */
+    padding: 10px 30px;
 }
 
 .rightPaymentPage{
-    width: 50%;
+    width: 40%;
+    padding: 10px 30px;
+}
+
+.cartpageTop{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
+.length{
+    background-color: rgb(13,110,253);
+    color: white;
+    height: 9%;
+    width: 9%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    border-radius: 50%;
+}
+
+.pay{
+    background-color:  rgba(242, 247, 244, 0.678);
+    color: black;
+    border: 1px solid black;
+}
+
+.pay:hover{
+    color: white;
+    background-color: black;
 }
