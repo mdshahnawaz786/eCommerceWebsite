@@ -1,0 +1,43 @@
+.cartContainer{
+    
+    display: flex;
+    height: 300px;
+    margin-top: 20px;
+    position: relative;
+    width: 90%;
+   
+}
+.cartImg{
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 50%;
+}
+
+.cartImg img{
+    height: 70%;
+    width: 70%;
+}
+
+.cartDetail{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    height: 100%;
+    justify-content: center;
+    padding: 0 1rem;
+    width: 50%;
+}
+
+.addMinusButton{
+    display: flex;
+    gap: 10px;
+}
+
+.deleteButton {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+  }

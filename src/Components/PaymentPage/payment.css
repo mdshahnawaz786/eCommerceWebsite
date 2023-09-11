@@ -1,0 +1,12 @@
+.paymentPage{
+    width: 100%;
+    display: flex;
+}
+
+.leftpaymentPage{
+    width: 50%;
+}
+
+.rightPaymentPage{
+    width: 50%;
+}

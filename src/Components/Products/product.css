@@ -1,0 +1,16 @@
+.product{
+    width: 100%;
+    padding: 5rem 8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.productHeading{
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.productHeading h1{
+    text-align: center;
+}
