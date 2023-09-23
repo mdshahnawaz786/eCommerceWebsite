@@ -1,0 +1,42 @@
+.LoginContainer{
+    height: 90vh;
+    width: 100vw;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: url(https://www.wallpapertip.com/wmimgs/84-845005_popular-wallpaper-for-pc.jpg); */
+    background: url(https://c4.wallpaperflare.com/wallpaper/395/979/578/patterns-background-glitter-lines-wallpaper-preview.jpg);
+  background-size: cover;
+  background-position: center;
+  animation: animateBg 5s linear infinite;
+}
+
+@keyframes  animateBg {
+    100% {
+        filter:hue-rotate(360deg)
+    }
+}
+
+.loginBox{
+    height: 75%;
+    width: 35%;
+    color: white;
+    backdrop-filter: blur(10px);
+    padding: 20px 50px;
+    border: 2px solid gray;
+    border-radius: 16px;
+}
+
+.loginBtn{
+    height: 35px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    background-color: white;
+    color: black;
+}
+
+.createAcBtn{
+    color: wheat;
+}

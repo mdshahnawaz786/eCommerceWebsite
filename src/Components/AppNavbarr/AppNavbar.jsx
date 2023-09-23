@@ -5,9 +5,15 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const AppNavbar = () => {
+
+  const addToCart = useSelector((storeData)=>{
+    return storeData.addToCart
+  })
+
   return (
     <div>
         <Navbar expand="lg" className="bg-body-tertiary">
@@ -30,8 +36,12 @@ const AppNavbar = () => {
               Product
               </Link>
             </Nav.Link>
-            <Nav.Link href="#action1">About</Nav.Link>
-            <Nav.Link href="#action1">Contact</Nav.Link>
+            <Nav.Link href="#action1">
+              <Link to='/about'>About</Link>
+            </Nav.Link>
+            <Nav.Link href="#action1">
+            <Link to='/contact'>Contact</Link>
+              </Nav.Link>
 
             
             {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
@@ -49,16 +59,12 @@ const AppNavbar = () => {
             </Nav.Link> */}
           </Nav>
           <Form className="d-flex">
-            {/* <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            /> */}
-            <Button variant="outline-success">login</Button>
-            <Button variant="outline-success">register</Button>
+            
+
+            <Link to='/login'><Button variant="outline-success"><i class="fa-solid fa-right-to-bracket"></i>  login</Button></Link>
+            <Link to='/register'><Button variant="outline-success">register</Button></Link>
             <Link to='/cart'>
-            <Button variant="outline-success">cart</Button>
+            <Button variant="outline-success"><i class="fa-solid fa-cart-shopping"></i> {addToCart.length}</Button>
             </Link>
           </Form>
         </Navbar.Collapse>
@@ -69,3 +75,4 @@ const AppNavbar = () => {
 }
 
 export default AppNavbar
+

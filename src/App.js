@@ -11,6 +11,10 @@ import ProductDetails from './Components/ProductDetails/ProductDetails';
 import AppFooter from './Components/Footer/AppFooter';
 import Cart from './Components/Cart/Cart';
 import Payment from './Components/PaymentPage/Payment';
+import About from './Components/About/About';
+import Contact from './Components/Contact/Contact';
+import Register from './Components/Register/Register';
+import Login from './Components/Login/Login';
 
 
 
@@ -30,9 +34,13 @@ function App() {
      <Routes>
       <Route path='/' element={<><ImageSlider/><Product/><AppFooter/></>}/>
       <Route path='/product' element={<><Product/><AppFooter/></>}/>
+      <Route path='/about' element={<><About/><AppFooter/></>}/>
+      <Route path='/contact' element={<><Contact/><AppFooter/></>}/>
       <Route path='/productdetails/:id' element={<><ProductDetails/><AppFooter/></>}/>
       <Route path='/cart' element={<><Cart/><AppFooter/></>}/>
       <Route path='/payment' element={<><Payment/><AppFooter/></>}/>
+      <Route path='/register' element={<><Register/></>}/>
+      <Route path='/login' element={<><Login/></>}/>
      </Routes>
     </div>
   );
