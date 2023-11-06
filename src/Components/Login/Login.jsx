@@ -1,61 +1,99 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import './login.css'
+import "./login.css";
 
-const Login = () => {
-    const navigate = useNavigate()
-    const [getUser, setGetUser] = useState("")
-    const [loginUser, setLoginUser ] = useState({
-        email: "",
-        password: ""
-    })
-    useEffect(()=>{
-        setGetUser(JSON.parse(localStorage.getItem("userDetail")))
-    },[])
+const Login = ({ setLogin }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  // const notify = () => toast("Welcome to e-Mart");
+  const [userdata, setUserdata] = useState("");
+
+  function validateUser(email, password) {
+    console.log(userdata);
+    if (email === "" || password === "") {
+      alert("Invalid Details");
+      return;
+    }
+    if (userdata === null) {
+      alert("Please Register First !!");
+      navigate("/register");
+      return;
+    } else if (
+      userdata !== "" &&
+      email === userdata.email &&
+      password === userdata.password
+    ) {
+      // notify();
+      localStorage.setItem("isLogin", JSON.stringify(true));
+      setLogin(true);
+      navigate("/");
+    }
+  }
+
+  // const notify = () => toast("Item added to cart");
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("user-data"));
+    setUserdata(data);
+  }, []);
+
   return (
-    <div className='LoginContainer'>
-        <div className='loginBox'>
-        <h2><b>Login</b></h2>
-            <hr />
-        <Form>
-        <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="name" placeholder="Enter email" onChange={((e)=>{
-                    setLoginUser({
-                        ...loginUser,
-                        email:e.target.value
-                    })
-                })} />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formGridAddress2">
-              <Form.Label>Password</Form.Label>
-              <Form.Control placeholder="Password"  onChange={((e)=>{
-                    setLoginUser({
-                        ...loginUser,
-                        password:e.target.value
-                    })
-                })} />
-            </Form.Group>
-            <button className='loginBtn' onClick={(()=>{
-                console.log(getUser);
-                console.log(loginUser);
-                if(getUser.email === loginUser.email && getUser.password === loginUser.password){
-                    alert("Login sucessful")
-                    navigate("/")
-                }else{
-                    alert("Login falied")
-                }
-            })}>Login</button><br /><br />
-            {/* <div > */}
-              <p>Don't have an account? &nbsp;<Link className='createAcBtn' to="/register"> <b>Create an account</b></Link></p>
-            {/* </div> */}
-        </Form>
-        </div>
-    </div>
-  )
-}
+    <div className="login_box_container">
+      <section className="sectionTag">
+        <div className="login-box">
+          <form action="">
+            <h2>Login</h2>
+            <div className="input-box">
+              <span className="icon">
+                <ion-icon name="mail"></ion-icon>
+              </span>
+              <input
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+                type="email"
+                required
+              />
+              <label>Email</label>
+            </div>
+            <div className="input-box">
+              <span className="icon">
+                <i class="fa-solid fa-lock"></i>
+              </span>
+              <input
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+                type="password"
+                required
+              />
+              <label>Password</label>
+            </div>
 
-export default Login
+            <button
+              onClick={() => {
+                validateUser(email, password);
+              }}
+            >
+              Submit
+            </button>
+            {/* <ToastContainer autoClose={1000} position="top-center" /> */}
+            <div className="register-link">
+              <p>
+                Don't have an account?{" "}
+                <Link to="/register">Create an account</Link>
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Login;

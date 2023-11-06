@@ -1,0 +1,35 @@
+.navbar {
+  min-height: 100px;
+  padding: 0;
+}
+
+.container-fluid {
+  border: none;
+}
+
+.me-auto {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  gap: 20px;
+}
+
+.btn-outline-success {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.d-flex {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-brand {
+  display: flex;
+  width: 20%;
+}
+
+#site_logo {
+  width: 30%;
+}
